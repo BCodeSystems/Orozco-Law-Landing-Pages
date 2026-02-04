@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function LeadForm({ t }){
+export default function LeadFormSection({ t }){
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -143,69 +143,73 @@ export default function LeadForm({ t }){
         </div>
       );
     }
-    return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <label className="block text-sm font-medium text-brand-gray w-full">
-              {copy.labels.name}
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                onInput={(e) => setName(e.target.value)}
-                className="mt-1 w-full h-11 rounded-md border border-gray-300 bg-white px-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30"
-                placeholder={copy.placeholders.name}
-              />
-            </label>
+return (
+  <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="grid gap-4 lg:grid-cols-3">
+      {/* Name */}
+      <label className="block text-sm font-medium text-brand-gray">
+        {copy.labels.name}
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="mt-1 w-full h-11 rounded-md border border-gray-300 bg-white px-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30"
+          placeholder={copy.placeholders.name}
+        />
+      </label>
 
-            <label className="block text-sm font-medium text-brand-gray">
-                {copy.labels.email}
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onInput={(e) => setEmail(e.target.value)}
-                  className="mt-1 w-full h-11 rounded-md border border-gray-300 bg-white px-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30"
-                  placeholder={copy.placeholders.email}
-                />
-            </label>
+      {/* Email */}
+      <label className="block text-sm font-medium text-brand-gray">
+        {copy.labels.email}
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="mt-1 w-full h-11 rounded-md border border-gray-300 bg-white px-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30"
+          placeholder={copy.placeholders.email}
+        />
+      </label>
 
-            <label className="block text-sm font-medium text-brand-gray">
-                {copy.labels.phone}
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  onInput={(e) => setPhone(e.target.value)}
-                  className="mt-1 w-full h-11 rounded-md border border-gray-300 bg-white px-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30"
-                  placeholder={copy.placeholders.phone}
-                />
-            </label>
+      {/* Phone (full width on desktop) */}
+      <label className="block text-sm font-medium text-brand-gray lg:col-span-2">
+        {copy.labels.phone}
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="mt-1 w-full h-11 rounded-md border border-gray-300 bg-white px-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30"
+          placeholder={copy.placeholders.phone}
+        />
+      </label>
 
-            <label className="block text-sm font-medium text-brand-gray">
-                {copy.labels.message}
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  onInput={(e) => setMessage(e.target.value)}
-                  rows={4}
-                  maxLength={500}
-                  className="mt-1 w-full min-h-[120px] rounded-md border border-gray-300 bg-white px-3 py-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30 resize-none"
-                  placeholder={copy.placeholders.message}
-                />
-                <p className="mt-2 text-right text-xs text-brand-gray/80">
-                  {message.length}/500 characters
-                </p>
-            </label>
-            <p className="mt-3 rounded-md bg-brand-gray/5 px-3 py-2 text-sm text-brand-gray">
-              {copy.helperText}
-            </p>
-            
-            <button type="submit" 
-            className="mt-3 w-full inline-flex justify-center rounded-md bg-brand-purple px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-purple/90 focus:outline-none focus:ring-2 focus:ring-brand-purple/40 disabled:cursor-not-allowed disabled:opacity-60"
-            disabled={isSubmitting}
-            >
-                {isSubmitting ? copy.submit.loading : copy.submit.idle}
-            </button>
-        </form>
-    );
+      {/* Message (full width) */}
+      <label className="block text-sm font-medium text-brand-gray lg:col-span-2">
+        {copy.labels.message}
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          rows={4}
+          maxLength={500}
+          className="mt-1 w-full min-h-[120px] lg:min-h-[96px] rounded-md border border-gray-300 bg-white px-3 py-3 outline-none transition focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/30 resize-none"
+          placeholder={copy.placeholders.message}
+        />
+        <p className="mt-2 text-right text-xs text-brand-gray/80">
+          {message.length}/500 characters
+        </p>
+      </label>
+    </div>
+
+    <p className="mt-3 rounded-md bg-brand-gray/5 px-3 py-2 text-sm text-brand-gray">
+      {copy.helperText}
+    </p>
+
+    <button
+      type="submit"
+      className="mt-3 w-full inline-flex justify-center rounded-md bg-brand-purple px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-purple/90 focus:outline-none focus:ring-2 focus:ring-brand-purple/40 disabled:cursor-not-allowed disabled:opacity-60"
+      disabled={isSubmitting}
+    >
+      {isSubmitting ? copy.submit.loading : copy.submit.idle}
+    </button>
+  </form>
+);
 }

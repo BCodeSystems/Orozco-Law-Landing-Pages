@@ -1,21 +1,21 @@
 export const es = {
-  /* =====================================================================
-   * HEADER
-   * ===================================================================== */
+  // Header
   header: {
     callNow: "Llamar ahora",
     callAriaLabel: "Llamar a Orozco Law Firm ahora",
+    phoneHref: "tel:6197361268",
   },
 
-  /* =====================================================================
-   * HERO (components/Hero.jsx)
-   * ===================================================================== */
+  // Hero
   hero: {
+    kicker: "Representación legal confiable",
     headline: "Abogado de lesiones personales en San Diego",
     subheadline: "Hable con un abogado real. Sin presión. Sin costos iniciales.",
     promise: "No cobramos a menos que usted gane.",
     body:
       "Si ha resultado lesionado como consecuencia de la negligencia de otra persona, comuníquese con Orozco Law Firm. Lucharemos por una compensación que cubra salarios perdidos, facturas médicas, gastos del costo de vida y más.",
+
+    // Accident types
     typesTitle: "Tipos de casos de lesiones personales",
     types: [
       "Accidentes automovilísticos",
@@ -25,37 +25,41 @@ export const es = {
       "Resbalones y caídas",
       "Otros accidentes",
     ],
+
+    // CTA
+    ctaText: "Obtenga su consulta gratuita",
   },
 
-  /* =====================================================================
-   * HERO - PHOTO CAPTION
-   * ===================================================================== */
+  // Attorney photo (cards)
   photo: {
-    alt: "Abogado Jose Orozco",
+    alt: "Retrato del abogado Jose Orozco",
     name: "Jose Orozco",
-    title: "Abogado en San Diego",
+    description:
+      "Un abogado de confianza reconocido por su preparación estratégica, comunicación clara y enfoque total en el cliente.",
+    chips: ["Enfoque en el cliente", "Orientado a resultados", "Listo para juicio"],
+  },
+  photoCard: {
+    alt: "Retrato del abogado Jose Orozco",
+    name: "Jose Orozco",
+    description:
+      "Un abogado de confianza reconocido por su preparación estratégica, comunicación clara y enfoque total en el cliente.",
+    chips: ["Enfoque en el cliente", "Orientado a resultados", "Listo para juicio"],
   },
 
-  /* =====================================================================
-   * HERO - FORM CARD (headline above the form)
-   * ===================================================================== */
+  // Form card (headline above the form)
   formCard: {
     headline: "¿Lesionado? Hablemos sobre lo que sigue",
     subheadline:
       "Con la confianza de las víctimas de lesiones en San Diego por orientación honesta y resultados reales.",
   },
 
-  /* =====================================================================
-   * HERO - TRUST BADGES
-   * ===================================================================== */
+  // Trust badges
   badges: {
     ntlAlt: "Sello de miembro NTL Top 100",
     bestLitAlt: "Mejores abogados litigantes",
   },
 
-  /* =====================================================================
-   * LEAD FORM (components/LeadForm.jsx)
-   * ===================================================================== */
+  // Lead form
   leadForm: {
     labels: {
       name: "Nombre",
@@ -67,8 +71,7 @@ export const es = {
       name: "Su nombre completo",
       email: "correo@ejemplo.com",
       phone: "(555) 555-5555",
-      message:
-        "Describa brevemente lo que ocurrió y cómo resultó lesionado",
+      message: "Describa brevemente lo que ocurrió y cómo resultó lesionado",
     },
     errors: {
       nameRequired: "El nombre es obligatorio",
@@ -79,8 +82,7 @@ export const es = {
       messageTooShort:
         "Por favor proporcione un poco más de detalle sobre su situación",
     },
-    helperText:
-      "La ayuda está disponible. Demos el siguiente paso juntos.",
+    helperText: "La ayuda está disponible. Demos el siguiente paso juntos.",
     submit: {
       idle: "Enviar",
       loading: "Enviando...",
@@ -92,20 +94,38 @@ export const es = {
     },
   },
 
-  /* =====================================================================
-   * REVIEWS CAROUSEL (components/ReviewsCarousel.jsx)
-   * ===================================================================== */
+  // Reviews
   reviewsCarousel: {
     heading: "Clientes reales. Alivio real.",
     subheading:
       "Esto es lo que dicen las personas sobre trabajar con Orozco Law Firm.",
-    dotAriaLabel: "Ir a la reseña",
     privacyNote: "Los nombres de los clientes se abrevian por privacidad.",
+    carouselAriaLabel: "Reseñas de clientes",
+    carouselHint: "Deslice para ver más reseñas",
+    dotAriaLabel: "Ir a la reseña",
+    items: [
+      {
+        name: "Nancy V.",
+        location: "San Diego, CA",
+        text:
+          "Jose y el equipo de Orozco Law Firm fueron sumamente profesionales y atentos. Desde el inicio se tomaron el tiempo para escucharme y me hicieron sentir apoyada cuando más lo necesitaba. La comunicación durante todo el proceso fue excelente, lo cual me dio tranquilidad y confianza. Sin duda los recomendaría a familiares y amigos.",
+      },
+      {
+        name: "Ilse C.",
+        location: "Chula Vista, CA",
+        text:
+          "Elegir al abogado correcto puede ser difícil, pero Orozco Law Firm hizo el proceso claro y tranquilizador. Todo el equipo fue profesional, eficiente y me apoyó en cada paso. Su dedicación y esfuerzo me dieron confianza durante mi caso y estoy muy agradecida por su orientación.",
+      },
+      {
+        name: "Kimberly R.",
+        location: "San Diego, CA",
+        text:
+          "El equipo fue profesional, atento y muy organizado. Me explicaron todo con claridad y me ayudaron a sentirme segura durante el proceso. Estoy agradecida por el apoyo y los recomendaría a otras personas.",
+      },
+    ],
   },
 
-  /* =====================================================================
-   * FAQ (components/FAQ.jsx)
-   * ===================================================================== */
+  // FAQ
   faq: {
     heading: "Preguntas frecuentes",
     subheading:
@@ -140,21 +160,18 @@ export const es = {
         "Una conversación rápida puede brindarle claridad. Llame ahora o envíe un mensaje y le responderemos pronto.",
       callNow: "Llamar ahora",
       sendMessage: "Enviar un mensaje",
+      sendMessageHref: "#lead-form",
+      phoneHref: "tel:6197361268",
     },
   },
 
-  /* =====================================================================
-   * OFFICE PHOTO SECTION (components/OfficePhotoSection.jsx)
-   * ===================================================================== */
+  // Office photo
   officePhotoSection: {
     imageAlt: "Equipo de Orozco Law Firm",
-    caption:
-      "Un equipo legal dedicado a su recuperación y tranquilidad.",
+    caption: "Un equipo legal dedicado a su recuperación y tranquilidad.",
   },
 
-  /* =====================================================================
-   * SITE FOOTER (components/SiteFooter.jsx)
-   * ===================================================================== */
+  // Footer
   siteFooter: {
     firmName: "Orozco Law Firm",
     address: "310 3rd Street Suite C-22 Chula Vista, CA 91910",
