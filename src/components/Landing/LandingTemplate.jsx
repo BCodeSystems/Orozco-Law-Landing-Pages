@@ -10,35 +10,36 @@ import OfficePhotoSection from "@/components/Landing/Sections/OfficePhotoSection
 import FooterSection from "@/components/Landing/Sections/FooterSection";
 
 
-export default function LandingTemplate({ config }) {
+export default function LandingTemplate({ t, config }) {
+  const resolvedT = t ?? config?.t;
   return (
     <LandingShell>
-      <LandingHeader t={config.t} />
-      <HeroSection t={config.t} />
+      <LandingHeader t={resolvedT} />
+      <HeroSection t={resolvedT} />
       <section id="lead-form" className="py-10">
         <div className="mx-auto max-w-6xl px-6">
-          <FormCard t={config.t}>
-            <LeadFormSection t={config.t} />
+          <FormCard t={resolvedT}>
+            <LeadFormSection t={resolvedT} />
           </FormCard>
         </div>
       </section>
 
       <main className="space-y-10">
         <section className="pt-4">
-          <ReviewsSection t={config.t} />
+          <ReviewsSection t={resolvedT} />
         </section>
 
         <section className="pt-2">
-          <FAQSection t={config.t} />
+          <FAQSection t={resolvedT} />
         </section>
 
         <section className="pt-6">
-          <OfficePhotoSection t={config.t} />
+          <OfficePhotoSection t={resolvedT} />
         </section>
         {/* other sections */}
       </main>
 
-      <FooterSection t={config.t} />
+      <FooterSection t={resolvedT} />
     </LandingShell>
   );
 }
