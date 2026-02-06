@@ -10,7 +10,18 @@ function normalizeHost(input = "") {
 }
 
 export function getSiteConfig(host = "") {
-  const h = normalizeHost(host);
+  // Try to resolve a host from multiple environments:
+  // 1) Explicit argument
+  // 2) Browser (client components)
+  // 3) Vercel env (server)
+  const resolvedHost =
+    host ||
+    (typeof window !== "undefined" ? window.location.hostname : "") ||
+    process.env.NEXT_PUBLIC_SITE_HOST ||
+    process.env.VERCEL_URL ||
+    "";
+
+  const h = normalizeHost(resolvedHost);
 
   // Default: San Diego
   let config = {
@@ -20,8 +31,8 @@ export function getSiteConfig(host = "") {
     },
   };
 
-  // Chula Vista landing page
-  if (h === "chulavistapersonalinjury.com") {
+  // Chula Vista landing page (support exact match or subdomain variations)
+  if (h === "chulavistapersonalinjury.com" || h.endsWith(".chulavistapersonalinjury.com")) {
     config = {
       heroH1: {
         en: "Chula Vista Personal Injury Attorney",

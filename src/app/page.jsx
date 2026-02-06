@@ -4,11 +4,14 @@ import { getSiteConfig } from "@/lib/siteConfig";
 import { headers } from "next/headers";
 
 export default function Page() {
-  const allHeaders = headers();
-  const host =
-    typeof allHeaders.get === "function"
-      ? allHeaders.get("host") || ""
-      : allHeaders["host"] || "";
+  const h = headers();
+  const rawHost =
+    (typeof h.get === "function" && (h.get("x-forwarded-host") || h.get("host"))) ||
+    h["x-forwarded-host"] ||
+    h["host"] ||
+    "";
+
+  const host = String(rawHost).split(",")[0].trim().split(":")[0];
 
   const site = getSiteConfig(host);
 

@@ -6,13 +6,11 @@ import ReviewsSection from "@/components/Landing/Sections/ReviewsSection";
 import FAQSection from "@/components/Landing/Sections/FAQSection";
 import OfficePhotoSection from "@/components/Landing/Sections/OfficePhotoSection";
 import FooterSection from "@/components/Landing/Sections/FooterSection";
-import LanguageToggle from "@/components/Landing/i18n/LanguageToggle";
 
 export default function HomeClient({ t }) {
 
   return (
     <LandingShell>
-      <LanguageToggle />
 
       <HeroSection t={t} />
 
