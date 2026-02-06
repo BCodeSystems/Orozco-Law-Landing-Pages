@@ -7,10 +7,8 @@ import FAQSection from "@/components/Landing/Sections/FAQSection";
 import OfficePhotoSection from "@/components/Landing/Sections/OfficePhotoSection";
 import FooterSection from "@/components/Landing/Sections/FooterSection";
 import LanguageToggle from "@/components/Landing/i18n/LanguageToggle";
-import { useLanguage } from "@/components/Landing/i18n/LanguageProvider";
 
-export default function HomeClient() {
-  const { t } = useLanguage();
+export default function HomeClient({ t }) {
 
   return (
     <LandingShell>
