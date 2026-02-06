@@ -61,6 +61,17 @@ export default function FooterSection({ t }) {
             <p className="mt-8 text-xs text-brand-gray/80">
               © {new Date().getFullYear()} {copy.firmName}. {copy.rights}
             </p>
+            <div className="mt-2 text-center text-xs text-brand-gray/60">
+              Created by{" "}
+              <a
+                href="https://bcodesystems.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-brand-purple"
+              >
+                BCode Systems
+              </a>
+            </div>
           </div>
         </div>
       </footer>
