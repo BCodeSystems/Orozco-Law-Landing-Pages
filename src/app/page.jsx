@@ -53,7 +53,6 @@ export default function Page() {
     "";
 
   const host = String(rawHost).split(",")[0].trim().split(":")[0];
-
   const site = getSiteConfig(host);
 
   const t = {
