@@ -10,10 +10,14 @@ function getHostFromHeaders() {
   const h = headers();
 
   const rawHost =
-    (typeof h.get === "function" && (h.get("x-forwarded-host") || h.get("host"))) ||
-    h["x-forwarded-host"] ||
-    h["host"] ||
-    "";
+  (typeof h.get === "function" &&
+    (h.get("x-site-host") ||
+      h.get("x-forwarded-host") ||
+      h.get("host"))) ||
+  h["x-site-host"] ||
+  h["x-forwarded-host"] ||
+  h["host"] ||
+  "";
 
   const host = String(rawHost)
     .split(",")[0]
