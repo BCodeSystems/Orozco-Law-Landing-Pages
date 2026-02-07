@@ -9,13 +9,15 @@ import FAQSection from "@/components/Landing/Sections/FAQSection";
 import OfficePhotoSection from "@/components/Landing/Sections/OfficePhotoSection";
 import FooterSection from "@/components/Landing/Sections/FooterSection";
 
-
-export default function LandingTemplate({ t, config }) {
+export default function LandingTemplate({ t, config, heroHeadline }) {
   const resolvedT = t ?? config?.t;
+  const resolvedHeroHeadline = heroHeadline ?? config?.heroHeadline;
+
   return (
     <LandingShell>
       <LandingHeader t={resolvedT} />
-      <HeroSection t={resolvedT} />
+      <HeroSection t={resolvedT} heroHeadline={resolvedHeroHeadline} />
+
       <section id="lead-form" className="py-10">
         <div className="mx-auto max-w-6xl px-6">
           <FormCard t={resolvedT}>

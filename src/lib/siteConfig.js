@@ -29,6 +29,19 @@ export function getSiteConfig(host = "") {
       en: "San Diego Personal Injury Attorney",
       es: "Abogado de Lesiones Personales en San Diego",
     },
+    meta: {
+      en: {
+        title: "San Diego Personal Injury Attorney | Orozco Law Firm",
+        description:
+          "Get a free case review from Orozco Law Firm. No upfront fees. Call today to discuss your injury claim.",
+      },
+      es: {
+        title: "Abogado de Lesiones Personales en San Diego | Orozco Law Firm",
+        description:
+          "Consulta gratis con Orozco Law Firm. Sin costos por adelantado. Llame hoy para hablar de su caso.",
+      },
+    },
+    ogImage: "/og-image.png",
   };
 
   // Chula Vista landing page (support exact match or subdomain variations)
@@ -38,6 +51,19 @@ export function getSiteConfig(host = "") {
         en: "Chula Vista Personal Injury Attorney",
         es: "Abogado de Lesiones Personales en Chula Vista",
       },
+      meta: {
+        en: {
+          title: "Chula Vista Personal Injury Attorney | Orozco Law Firm",
+          description:
+            "Get a free case review from Orozco Law Firm. No upfront fees. Serving Chula Vista injury victims.",
+        },
+        es: {
+          title: "Abogado de Lesiones Personales en Chula Vista | Orozco Law Firm",
+          description:
+            "Consulta gratis con Orozco Law Firm. Sin costos por adelantado. Atendemos a Chula Vista.",
+        },
+      },
+      ogImage: "/og-image.png",
     };
   }
 

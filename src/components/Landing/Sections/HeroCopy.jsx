@@ -1,6 +1,6 @@
 import AccidentTypes from "@/components/Landing/Sections/AccidentTypes";
 
-export default function HeroCopy({ t }) {
+export default function HeroCopy({ t, heroHeadline }) {
   const hero = t?.hero ?? {};
 
   return (
@@ -12,7 +12,7 @@ export default function HeroCopy({ t }) {
 
       {/* Headline */}
       <h1 className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight text-white sm:text-6xl">
-        {hero.headline ?? ""}
+        {heroHeadline ?? hero.headline ?? ""}
       </h1>
 
       {/* Subheadline (NO hardcoded English) */}
