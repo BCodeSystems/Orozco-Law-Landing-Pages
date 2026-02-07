@@ -9,7 +9,7 @@ export const es = {
   // Hero
   hero: {
     kicker: "Representación legal confiable",
-    headline: "Abogado de lesiones personales en San Diego",
+    headline: "Abogado de lesiones personales en Chula Vista",
     subheadline: "Hable con un abogado real. Sin presión. Sin costos iniciales.",
     promise: "No cobramos a menos que usted gane.",
     body:
@@ -50,7 +50,7 @@ export const es = {
   formCard: {
     headline: "¿Lesionado? Hablemos sobre lo que sigue",
     subheadline:
-      "Con la confianza de las víctimas de lesiones en San Diego por orientación honesta y resultados reales.",
+      "Con la confianza de las víctimas de lesiones en Chula Vista por orientación honesta y resultados reales.",
   },
 
   // Trust badges

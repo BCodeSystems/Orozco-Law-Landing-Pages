@@ -9,7 +9,7 @@ export const en = {
   // Hero
   hero: {
     kicker: "Trusted legal representation",
-    headline: "San Diego Personal Injury Attorney",
+    headline: "Chula Vista Personal Injury Attorney",
     subheadline: "Talk to a real attorney. No pressure. No upfront fees.",
     promise: "We don’t get paid unless you do.",
     body:
@@ -48,7 +48,7 @@ export const en = {
   formCard: {
     headline: "Injured? Let’s talk about what happens next",
     subheadline:
-      "Trusted by San Diego injury victims for honest guidance and real results.",
+      "Trusted by Chula Vista injury victims for honest guidance and real results.",
   },
 
   // Trust badges
