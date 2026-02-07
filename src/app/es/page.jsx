@@ -9,10 +9,18 @@ import { headers } from "next/headers";
 function getHostFromHeaders() {
   const h = headers();
 
+  const read = (key) => {
+    if (h && typeof h.get === "function") return h.get(key) || "";
+    if (h && typeof h === "object") return h[key] || h[key?.toLowerCase?.()] || "";
+    return "";
+  };
+
   const rawHost =
-    h.get("x-site-host") ||
-    h.get("x-forwarded-host") ||
-    h.get("host") ||
+    read("x-site-host") ||
+    read("x-forwarded-host") ||
+    read("host") ||
+    process.env.NEXT_PUBLIC_SITE_HOST ||
+    process.env.VERCEL_URL ||
     "";
 
   const host = String(rawHost)
