@@ -22,7 +22,7 @@ export async function generateMetadata() {
 
   const baseUrl = new URL(`https://${host || "example.com"}`);
   const ogImage = site?.ogImage ?? "/og-image.png";
-a
+
   return {
     title,
     description,
@@ -61,7 +61,7 @@ export default function Page() {
     ...es,
     hero: {
       ...es.hero,
-      headline: site.heroH1.es ?? es.hero.headline,
+      headline: site?.heroH1?.es ?? es.hero.headline,
     },
   };
 
