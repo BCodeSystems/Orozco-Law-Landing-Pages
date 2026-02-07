@@ -1,24 +1,37 @@
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
 import LandingTemplate from "@/components/Landing/LandingTemplate";
 import { en } from "@/lib/i18n/en";
 import { getSiteConfig } from "@/lib/siteConfig";
 import { headers } from "next/headers";
 
-export async function generateMetadata() {
+function getHostFromHeaders() {
   const h = headers();
+
   const rawHost =
     (typeof h.get === "function" && (h.get("x-forwarded-host") || h.get("host"))) ||
     h["x-forwarded-host"] ||
     h["host"] ||
     "";
 
-  const host = String(rawHost).split(",")[0].trim().split(":")[0];
+  const host = String(rawHost)
+    .split(",")[0]
+    .trim()
+    .replace(/:\d+$/, "")
+    .replace(/^www\./, "");
+
+  return { rawHost, host };
+}
+
+export async function generateMetadata() {
+  const { host } = getHostFromHeaders();
   const site = getSiteConfig(host);
 
-  const title = site?.meta?.en?.title ?? "Orozco Law Firm";
+  const title = site?.meta?.en?.title ?? en.meta?.title ?? "Orozco Law Firm";
   const description =
     site?.meta?.en?.description ??
+    en.meta?.description ??
     "Personal injury attorneys. Free consultation.";
 
   const baseUrl = new URL(`https://${host || "example.com"}`);
@@ -47,21 +60,19 @@ export async function generateMetadata() {
 }
 
 export default function Page() {
-  const h = headers();
-  const rawHost =
-    (typeof h.get === "function" && (h.get("x-forwarded-host") || h.get("host"))) ||
-    h["x-forwarded-host"] ||
-    h["host"] ||
-    "";
+  const { rawHost, host } = getHostFromHeaders();
 
-  const host = String(rawHost).split(",")[0].trim().split(":")[0];
+  console.log("[EN] rawHost:", rawHost, "normalized host:", host);
+
   const site = getSiteConfig(host);
+
+  console.log("[EN] site.heroH1:", site?.heroH1);
 
   const t = {
     ...en,
     hero: {
       ...en.hero,
-      headline: site.heroH1.en,
+      headline: site?.heroH1?.en ?? en.hero.headline,
     },
   };
 

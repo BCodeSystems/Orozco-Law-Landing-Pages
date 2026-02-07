@@ -6,19 +6,26 @@ import { es } from "@/lib/i18n/es";
 import { getSiteConfig } from "@/lib/siteConfig";
 import { headers } from "next/headers";
 
-export async function generateMetadata() {
-  const hdrs = headers();
+function getHostFromHeaders() {
+  const h = headers();
+
   const rawHost =
-    hdrs.get("x-forwarded-host") ||
-    hdrs.get("host") ||
+    (typeof h.get === "function" && (h.get("x-forwarded-host") || h.get("host"))) ||
+    h["x-forwarded-host"] ||
+    h["host"] ||
     "";
 
-  const host = rawHost
+  const host = String(rawHost)
     .split(",")[0]
     .trim()
     .replace(/:\d+$/, "")
     .replace(/^www\./, "");
 
+  return { rawHost, host };
+}
+
+export async function generateMetadata() {
+  const { host } = getHostFromHeaders();
   const site = getSiteConfig(host);
 
   const title = site?.meta?.es?.title ?? es.meta?.title ?? "Orozco Law Firm";
@@ -53,17 +60,7 @@ export async function generateMetadata() {
 }
 
 export default function Page() {
-  const hdrs = headers();
-  const rawHost =
-    hdrs.get("x-forwarded-host") ||
-    hdrs.get("host") ||
-    "";
-
-  const host = rawHost
-    .split(",")[0]
-    .trim()
-    .replace(/:\d+$/, "")
-    .replace(/^www\./, "");
+  const { rawHost, host } = getHostFromHeaders();
 
   console.log("[ES] rawHost:", rawHost, "normalized host:", host);
 
