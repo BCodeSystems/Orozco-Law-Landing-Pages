@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 import LandingTemplate from "@/components/Landing/LandingTemplate";
 import { es } from "@/lib/i18n/es";
 import { getSiteConfig } from "@/lib/siteConfig";
