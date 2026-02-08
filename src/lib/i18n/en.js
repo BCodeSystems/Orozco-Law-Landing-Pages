@@ -1,4 +1,9 @@
 export const en = {
+  meta: {
+    title: "South Bay Personal Injury Attorney | Orozco Law Firm",
+    description:
+      "Experienced South Bay personal injury attorney helping victims of car accidents, slip and falls, and serious injuries. Free consultation.",
+  },
   // Header
   header: {
     callNow: "Call now",
@@ -9,7 +14,7 @@ export const en = {
   // Hero
   hero: {
     kicker: "Trusted legal representation",
-    headline: "San Diego Personal Injury Attorney",
+    headline: "South Bay Personal Injury Attorney",
     subheadline: "Talk to a real attorney. No pressure. No upfront fees.",
     promise: "We don’t get paid unless you do.",
     body:

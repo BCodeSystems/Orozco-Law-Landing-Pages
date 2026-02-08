@@ -1,4 +1,9 @@
 export const es = {
+  meta: {
+    title: "Abogado de Lesiones Personales en South Bay | Orozco Law Firm",
+    description:
+      "Abogado con experiencia en lesiones personales sirviendo a clientes en South Bay. Consultas gratuitas y sin honorarios iniciales.",
+  },
   // Header
   header: {
     callNow: "Llamar ahora",
@@ -9,7 +14,7 @@ export const es = {
   // Hero
   hero: {
     kicker: "Representación legal confiable",
-    headline: "Abogado de lesiones personales en San Diego",
+    headline: "Abogado de lesiones personales en South Bay",
     subheadline: "Hable con un abogado real. Sin presión. Sin costos iniciales.",
     promise: "No cobramos a menos que usted gane.",
     body:
