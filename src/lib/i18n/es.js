@@ -1,4 +1,9 @@
 export const es = {
+  meta: {
+    title: "Abogado de Lesiones Personales en Chula Vista | Orozco Law Firm",
+    description:
+      "Consulta gratis con Orozco Law Firm. Sin costos por adelantado. Atendemos a víctimas de lesiones en Chula Vista.",
+  },
   // Header
   header: {
     callNow: "Llamar ahora",

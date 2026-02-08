@@ -1,4 +1,10 @@
 export const en = {
+  // Metadata (SEO)
+  meta: {
+    title: "Chula Vista Personal Injury Attorney | Orozco Law Firm",
+    description:
+      "Get a free consultation with Orozco Law Firm. No upfront fees. Serving Chula Vista injury victims.",
+  },
   // Header
   header: {
     callNow: "Call now",
