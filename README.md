@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Law Firm Lead Platform
 
-## Getting Started
+A modular Next.js application designed for building high-conversion, SEO-optimized law firm landing pages. This project focuses on scalability across multiple domains, bilingual support, and streamlined lead intake.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This platform was built to support multiple law firm websites using a shared, reusable architecture. It allows for consistent design, fast deployment, and efficient lead handling across different locations and campaigns.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Frontend:** Next.js (App Router), React, Tailwind CSS  
+- **Backend:** Next.js API Routes  
+- **Language:** JavaScript / TypeScript  
+- **Integration:** Google Apps Script (for lead processing and storage)  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- Modular, reusable page components for multi-site deployment  
+- SEO-optimized structure for improved search visibility  
+- Bilingual support (English / Spanish)  
+- Lead capture forms with validation and error handling  
+- Server-side API route for processing and forwarding lead data  
+- Integration with external systems via webhook (Google Apps Script)  
 
-To learn more about Next.js, take a look at the following resources:
+## API Functionality
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application includes a server-side API endpoint that:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Accepts lead form submissions (POST requests)  
+- Validates required fields (name, email, message, etc.)  
+- Handles error responses and status codes  
+- Forwards data to an external processing service  
 
-## Deploy on Vercel
+## Architecture
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Built using Next.js App Router for modern routing and server capabilities  
+- Separation of concerns between UI components and API logic  
+- Designed for scalability across multiple domains and campaigns  
+- Lightweight and performance-focused for fast load times  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Challenges & Solutions
+
+**Challenge:** Creating a reusable system that works across multiple law firm websites without duplicating code  
+**Solution:** Implemented a modular component structure and centralized logic for easy reuse  
+
+**Challenge:** Handling lead submissions reliably without a traditional database  
+**Solution:** Integrated with Google Apps Script as a lightweight backend solution for storing and managing leads  
+
+## Status
+
+Actively used and deployed across multiple client projects.
+
+## Future Improvements
+
+- Transition to a relational database (PostgreSQL) for structured data management  
+- Expand API functionality for more advanced lead tracking and analytics  
+- Enhance validation and error handling for edge cases  
+
+## Author
+
+Developed by BCode Systems
